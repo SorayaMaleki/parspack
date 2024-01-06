@@ -1,0 +1,1024 @@
+{
+	"info": {
+		"_postman_id": "5b6a273f-767d-4175-86d5-733c984689c1",
+		"name": "parspack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"soraya\",\r\n    \"email\": \"soraya2@soraya.com\",\r\n    \"password\": \"12484654Mm\",\r\n    \"password_confirmation\":\"12484654Mm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain}}/{{API}}/{{Version}}/register",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"{{API}}",
+								"{{Version}}",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"soraya\",\r\n    \"email\": \"soraya2@soraya.com\",\r\n    \"password\": \"12484654Mm\",\r\n    \"password_confirmation\":\"12484654Mm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/register",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:15:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 201,\n    \"message\": [\n        \"User registered and logged in successfully.\"\n    ],\n    \"body\": {\n        \"token\": \"1|71YfLCNeNXSTTWMdAazu34VRmBrJYxQumRKOhNswace7cfa1\",\n        \"user\": {\n            \"email\": \"soraya2@soraya.com\",\n            \"name\": \"soraya\",\n            \"updated_at\": \"2023-12-31T08:15:10.000000Z\",\n            \"created_at\": \"2023-12-31T08:15:10.000000Z\",\n            \"id\": 1\n        }\n    }\n}"
+						},
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"soraya\",\r\n    \"email\": \"soraya2@soraya.com\",\r\n    \"password\": \"12484654Mm\",\r\n    \"password_confirmation\":\"12484654Mm6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/register",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:17:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 422,\n    \"message\": {\n        \"email\": [\n            \"The Email has already been taken.\"\n        ],\n        \"password\": [\n            \"The password confirmation does not match.\"\n        ]\n    },\n    \"body\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"soraya@soraya.com\",\r\n    \"password\": \"12484j654Mm\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain}}/{{API}}/{{Version}}/login",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"{{API}}",
+								"{{Version}}",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"soraya@soraya2.com\",\r\n    \"password\": \"12484j654Mm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/login",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"login"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:18:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 422,\n    \"message\": {\n        \"email\": [\n            \"The selected Email is invalid.\"\n        ]\n    },\n    \"body\": null\n}"
+						},
+						{
+							"name": "unauthenticated error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"soraya2@soraya.com\",\r\n    \"password\": \"12484j654Mm5\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/login",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:20:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 401,\n    \"message\": [\n        \"Unauthenticated.\"\n    ],\n    \"body\": null\n}"
+						},
+						{
+							"name": "success login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"soraya2@soraya.com\",\r\n    \"password\": \"12484654Mm\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/login",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:21:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "60"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": [\n        \"User logged in successfully.\"\n    ],\n    \"body\": {\n        \"token\": \"2|6AaI0JomOMBnXQhhfEDBnHymJONYnI50RqUVE5YK24cd45df\",\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"soraya\",\n            \"email\": \"soraya2@soraya.com\",\n            \"email_verified_at\": null,\n            \"created_at\": \"2023-12-31T08:15:10.000000Z\",\n            \"updated_at\": \"2023-12-31T08:15:10.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|wHjcuWjsJAqqpgHlWU5N5bdQiFa5x0S64d8TkMBib8eae5bf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain}}/{{API}}/{{Version}}/logout",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"{{API}}",
+								"{{Version}}",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Unauthenticated",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/logout",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"logout"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 401,\n    \"message\": [\n        \"Unauthenticated.\"\n    ],\n    \"body\": null\n}"
+						},
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/logout",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"logout"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "createComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|OR0DiO4IqvqusLErthQtwjgRm97SuOV6vwS174Qud384badb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain}}/{{API}}/{{Version}}/comments",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"{{API}}",
+								"{{Version}}",
+								"comments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "unauthenticated error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/comments",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"comments"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:35:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 401,\n    \"message\": [\n        \"Unauthenticated.\"\n    ],\n    \"body\": null\n}"
+						},
+						{
+							"name": "limit exceeded error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/comments",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"comments"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:36:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 403,\n    \"message\": [\n        \"Comment limit exceeded.\"\n    ],\n    \"body\": null\n}"
+						},
+						{
+							"name": "success createComment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"c\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/comments",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"comments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:41:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": [\n        \"comment created.\"\n    ],\n    \"body\": {\n        \"content\": \"such a wow\",\n        \"product_id\": 3,\n        \"user_id\": 1,\n        \"updated_at\": \"2023-12-31T08:41:55.000000Z\",\n        \"created_at\": \"2023-12-31T08:41:55.000000Z\",\n        \"id\": 12,\n        \"product\": {\n            \"id\": 3,\n            \"title\": \"C\",\n            \"created_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"updated_at\": \"2023-12-31T08:30:38.000000Z\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "getProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|nIXO0r5k3kxBU1s5ysstQXBC9OtQMRgQrvKHdjG50cfe1ba8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Domain}}/{{API}}/{{Version}}/products",
+							"host": [
+								"{{Domain}}"
+							],
+							"path": [
+								"{{API}}",
+								"{{Version}}",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "unauthenticated error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/products",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"products"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:21:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": false,\n    \"status_code\": 401,\n    \"message\": [\n        \"Unauthenticated.\"\n    ],\n    \"body\": null\n}"
+						},
+						{
+							"name": "success empty list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/products",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:29:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": [\n        \"products list returned successfully\"\n    ],\n    \"body\": []\n}"
+						},
+						{
+							"name": "success getProducts with comments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\":\"such a wow\",\r\n    \"product\":\"a\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Domain}}/{{API}}/{{Version}}/products",
+									"host": [
+										"{{Domain}}"
+									],
+									"path": [
+										"{{API}}",
+										"{{Version}}",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.25"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 31 Dec 2023 08:32:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": [\n        \"products list returned successfully\"\n    ],\n    \"body\": {\n        \"0\": {\n            \"id\": 1,\n            \"title\": \"A\",\n            \"created_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"updated_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"comments\": [\n                {\n                    \"id\": 1,\n                    \"user_id\": 1,\n                    \"product_id\": 1,\n                    \"content\": \"good\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                {\n                    \"id\": 3,\n                    \"user_id\": 1,\n                    \"product_id\": 1,\n                    \"content\": \"it is expensive\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                }\n            ]\n        },\n        \"1\": {\n            \"id\": 2,\n            \"title\": \"B\",\n            \"created_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"updated_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"comments\": [\n                {\n                    \"id\": 2,\n                    \"user_id\": 1,\n                    \"product_id\": 2,\n                    \"content\": \"useful\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                },\n                {\n                    \"id\": 4,\n                    \"user_id\": 1,\n                    \"product_id\": 2,\n                    \"content\": \"good product\",\n                    \"created_at\": null,\n                    \"updated_at\": null\n                }\n            ]\n        },\n        \"2\": {\n            \"id\": 3,\n            \"title\": \"C\",\n            \"created_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"updated_at\": \"2023-12-31T08:30:38.000000Z\",\n            \"comments\": []\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

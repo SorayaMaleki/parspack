@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'wrong' => 'something went wrong',
+    'created' => ':resource created.',
+    'updated' => ':resource updated successfuly.',
+    'list' => ':resource list returned successfully',
+    'show' => ':resource returned successfully',
+    'deleted' => ':resource deleted.',
+    'not_found' => 'Not found.',
+    'route_not_found' => 'Route not found.',
+    'record_not_found' => 'Record not found.',
+    'method_not_allowed' => 'The requested method is not allowed.',
+    'failed' => 'These credentials do not match our records.',
+    'password' => 'The provided password is incorrect.',
+    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'external_request'  => 'request to other server did not respond correctly',
+    'unsuccessful_registration'   =>  'error has occurred,registration failed.',
+    'unsuccessful_login'   =>  'error has occurred,login failed.',
+    'unsuccessful_business'   =>  'error has occurred,business did not get created.',
+    'invalid_username'   =>  'Username or password is incorrect.',
+    'invalid_password'   =>  'Password is incorrect.',
+    'otp_failure' => 'otp did not created or sent',
+    'unauthorized_user' => 'Unauthorized User',
+    'success_register' => 'User registered and logged in successfully.',
+    'success_login'=>'User logged in successfully.',
+    'logged_out' => 'User logged out successfully.',
+];
